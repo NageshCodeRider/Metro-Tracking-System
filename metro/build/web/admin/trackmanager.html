@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Status</title>
+    <style>
+          body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+     header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        nav img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+         nav div {
+        display: flex;
+        align-items: center;
+    }
+
+    nav img {
+        max-width: 100px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    nav span {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    #container {
+        margin: 20px auto;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        background-color: lightblue;
+        border-radius: 10px;
+        width: 900px;
+        text-align:center;
+    }
+
+    #startBtn, #stopBtn {
+        align-items:  center;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #stopBtn {
+        background-color: #FF4500;
+    }
+    #h2 {
+         text-align:center;
+        }
+    #status {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    #container2 {
+        margin: 20px auto;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        background-color: #DA70D6;
+        border-radius: 10px;
+        width: 900px;
+        text-align:center;
+    }
+
+    #startBtn2, #stopBtn2 {
+        align-items:  center;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #stopBtn2 {
+        background-color: #FF4500;
+    }
+    #h2 {
+         text-align:center;
+        }
+    #status2 {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div>
+        <img src="logo.png" alt="Logo">
+        <span>Admin Dashboard</span>
+    </div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<div id="container">
+    <h2>Blueline Metro Train</h2>
+    <button id="startBtn" onclick="startMetro()">Start Metro</button>
+    <button id="stopBtn" onclick="stopMetro()">Stop Metro</button>
+
+    <div id="status"></div>
+</div>    
+<div id="container2">
+    <h2>Redline Metro Train</h2>
+    <button id="startBtn2" onclick="startMetro2()">Start Metro</button>
+    <button id="stopBtn2" onclick="stopMetro2()">Stop Metro</button>
+    <div id="status2"></div>
+</div>
+    
+<script>
+    function startMetro() {
+        document.getElementById("startBtn").style.backgroundColor = "#00FF00"; // Green
+        document.getElementById("status").innerHTML = "Metro is working on a regular schedule.";
+
+        setTimeout(function () {
+            document.getElementById("startBtn").style.backgroundColor = "#4CAF50"; // Reset to original color
+        }, 5000); // 5000 milliseconds = 5 seconds
+    }
+
+    function stopMetro() {
+        document.getElementById("startBtn").style.backgroundColor = "#4CAF50"; // Reset to original color
+        document.getElementById("stopBtn").style.backgroundColor = "#FF0000"; // Red
+        document.getElementById("status").innerHTML = "There is some technical problem on the metro train.";
+
+        setTimeout(function () {
+            document.getElementById("stopBtn").style.backgroundColor = "#FF4500"; // Reset to original color
+        }, 5000); // 5000 milliseconds = 5 seconds
+    }
+</script>
+ <script>
+        function startMetro2() {
+            document.getElementById("startBtn2").style.backgroundColor = "#00FF00"; // Green
+            document.getElementById("status2").innerHTML = "Metro is working on a regular schedule for Redline.";
+
+            setTimeout(function () {
+                document.getElementById("startBtn2").style.backgroundColor = "#4CAF50"; // Reset to original color
+            }, 5000); // 5000 milliseconds = 5 seconds
+        }
+
+        function stopMetro2() {
+            document.getElementById("startBtn2").style.backgroundColor = "#4CAF50"; // Reset to original color
+            document.getElementById("stopBtn2").style.backgroundColor = "#FF0000"; // Red
+            document.getElementById("status2").innerHTML = "There is some technical problem on the Redline metro train.";
+
+            setTimeout(function () {
+                document.getElementById("stopBtn2").style.backgroundColor = "#FF4500"; // Reset to original color
+            }, 5000); // 5000 milliseconds = 5 seconds
+        }
+    </script>
+</body>
+</html>

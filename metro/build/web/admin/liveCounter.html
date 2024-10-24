@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting Automation</title>
+    <style>
+           body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+     header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        nav img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+         nav li {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: white !important; /* Set to white and make it !important */
+    transition: color 0.3s ease-in-out;
+}
+         nav div {
+        display: flex;
+        align-items: center;
+    }
+
+    nav img {
+        max-width: 100px;
+        height: auto;
+        margin-right: 10px;
+    }
+
+    nav span {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+        #counter-container {
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #counter {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<nav>
+    <div>
+        <img src="logo.png" alt="Logo">
+        <span>Admin Dashboard</span>
+    </div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+<div id="counter-container">
+    <h2>Live Counter</h2>
+    <p>This is Successful Live Count of Passengers Travel in One Year </p>
+    <div id="counter">2,650,777</div>
+</div>
+
+<script>
+    let count = 2650777;
+
+    setInterval(function () {
+        count++;
+        document.getElementById("counter").innerHTML = numberWithCommas(count);
+    }, 1000); // Update count every 1000 milliseconds (1 second)
+
+    // Function to add commas for thousands, millions, etc.
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+</script>
+
+</body>
+</html>
